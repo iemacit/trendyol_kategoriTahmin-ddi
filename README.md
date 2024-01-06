@@ -1,0 +1,1 @@
+# trendyol_kategoriTahmin-ddi
