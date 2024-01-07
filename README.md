@@ -5,7 +5,7 @@
 
   
 ### PROJENİN AMACI  
-Piyasada hali hazırda satılmakta olan ürünlerin Trendyol e ticaret sitesindeki ürünlerin kategori bazlı dağılımını görerek ve aynı zamanda fiyat ortalamasını alarak bu sayede  e-ticaret yapan bireysel satıcılara kolaylık sağlamak amaçlanmıştır. Örneğin 9000 veri bulunan veri setimde Saat Seti en az satılan üründü ve fiyatına dikkat çekersek en pahalı ürün olduğu görülmektedir. Bu sayede bireysel e-ticaret satıcısı hem rekabet edeceği firmanın az olduğunu görecek hem de ortalama fiyatın yüksek olması sebebiyle satış ve kazanç miktarı artacak. Ben burada erkek giyim ve aksesuarı başlıkları altındaki ürünlerin 9000 tanesi ile bu veriye ulaşmış oldum. Sadece bu  başlıklar için modelim çalışmıyor. İstediğiniz farklı başlıklar altındaki Trendyol linklerini de yapıştırarak bu model de verilere ulaşabilirsiniz.
+Trendyol e ticaret sitesinde hali hazırda satılmakta olan ürünlerin kategori bazlı dağılımını görerek ve aynı zamanda fiyat ortalamasını alarak bu sayede  e-ticaret yapan bireysel satıcılara kolaylık sağlamak amaçlanmıştır. Örneğin 9000 veri bulunan veri setimde Saat Seti en az satılan üründü ve fiyatına dikkat çekersek en pahalı ürün olduğu görülmektedir. Bu sayede bireysel e-ticaret satıcısı hem rekabet edeceği firmanın az olduğunu görecek hem de ortalama fiyatın yüksek olması sebebiyle satış ve kazanç miktarı artacak. Ben burada erkek giyim ve aksesuarı başlıkları altındaki ürünlerin 9000 tanesi ile bu veriye ulaşmış oldum. Sadece bu  başlıklar için modelim çalışmıyor. İstediğiniz farklı başlıklar altındaki Trendyol linklerini de yapıştırarak bu model de verilere ulaşabilirsiniz.
 (Örneğin; Elektronik eşya satan bir mağaza Trendyol üzerindeki ürün satış potansiyelini ve ortalama ürün başı fiyatını görmek isterse elektronik ürünlerin bulunduğu başlığın olduğu linki yapıştırması ona modeli kullanmasında yardımcı olacaktır.) 
 
 # TRENDYOL.COM SİTESİNDEN SATIŞI YAPILAN ÜRÜNLERİN KATEGORİ TAHMİNİ
@@ -20,7 +20,7 @@ Bu projede trendyol.com sitesinden alınmış erkek giyim ve aksesuar başlıkla
 ##### Veri Setinin Oluşturulması
 Veri setimiz trendyol.com da web scrapping işlemi yaparak farklı kategorilerden oluşan ilanlardan oluşuyor. Modelimizi doğru eğitebilmemiz için verilerimizin düzgün, eksiksiz veriler olması gerekir. Bu yüzden ürünler bazı kriterlere dikkat edilerek çekilmiştir. Örneğin ürün başlığında ürünün kategorisinin geçmesine önemle dikkat çekilmiştir.Trendyol üzerinden veriyi çekerken bazı linklere giriş yaparken modelim internet hızından dolayı bazılarında ürün bilgisi çekerken gecikme kaynaklı bilgiler eksik geldiği saptanmış ve bu durum oluşan ürünler listeye eklenmeden contunie ile çıkarılmıştır.Ürünleri çekebilmek için web scrapping işlemi yapan BeatufilSoup kütüphanesi kullanılmıştır. Veri setimde yaklaşık 9000 veri vardır.
 
-##### Veri Setinde Bulunan Ürünlerin Kategori Dağılıöı
+##### Veri Setinde Bulunan Ürünlerin Kategori Dağılımı
 ![Veri Seti](https://github.com/iemacit/trendyol_kategoriTahmin-ddi/blob/main/images/yuzdelik_urun_da%C4%9F%C4%B1l%C4%B1m%C4%B1.png)
   
 ##### Veri Setinde Bulunan Kategorilerin Ortalama Fiyat Grafiği
@@ -29,17 +29,17 @@ Veri setimiz trendyol.com da web scrapping işlemi yaparak farklı kategorilerde
 Bu verileri çekmek ortalama 120 dakika sürmüştür.
 
 Veri setindeki kolonlarımız aşağıdaki gibidir;  
--Ürün İsmi
--Ürün Linki
--Ürün Fiyatı
--Ürün Etiketi
+-Ürün İsmi  
+-Ürün Linki  
+-Ürün Fiyatı  
+-Ürün Etiketi  
 Veri setinde ürünler Trendyol üzerindeki linkleri,fiyatları ve kategorileri ile ekleniyorlar. Bunun amacı oluşturulacak olan modeli eğitmek için hangi kategoriye ait olduğunu bilmek ve fiyatları alarak kategori bazlı istatislik oluşturmak.
 
 *Oluşturulmuş Veri Seti*  
 ![Oluşturulmuş Veri Seti](https://github.com/iemacit/trendyol_kategoriTahmin-ddi/blob/main/images/trendyol_Cekilen_%C3%BCr%C3%BCnler.png)
 
-##### ürünlerin Temizlenmesi ve Lemmatization İşlemi
-Veri seti oluşturulduktan sonra modelin daha iyi çalışması ve başarı oranının daha yüksek olması için ürünlerin temizlenmesi gerekmektedir. ürünlerin içerisinde ürün kodları, emojiler, noktalama işaretleri, stop wordsler, linkler gibi istenmeyen ve modelin başarısını düşürecek veriler ürünlerin içerisinden temizleniyor.  
+##### Ürünlerin Temizlenmesi ve Lemmatization İşlemi
+Veri seti oluşturulduktan sonra modelin daha iyi çalışması ve başarı oranının daha yüksek olması için ürünlerin temizlenmesi gerekmektedir. Ürünlerin içerisinde ürün kodları, emojiler, noktalama işaretleri, stop wordsler, linkler gibi istenmeyen ve modelin başarısını düşürecek veriler ürünlerin içerisinden temizleniyor.  
   
 *Oluşturulmuş Temiz Ürün Başlığı Gösteremi*  
 ![Oluşturulan Temiz İlan](https://github.com/iemacit/trendyol_kategoriTahmin-ddi/blob/main/images/temizlemi%C5%9F_veriseti.png)
@@ -47,16 +47,16 @@ Veri seti oluşturulduktan sonra modelin daha iyi çalışması ve başarı oran
 ##### Modelin Oluşturulması ve Ürünlerin Kategorilendirilmesi
 ###### Model Seçimi
 Yapılacak sınıflandırma işleminin hangi modelde daha yüksek başarı oranı vereceğini tespit etmek amacıyla araştırma yapılıp aynı zamanda bazı modeller üzerinde de test edilmiştir.2 model üzerinde denemeler yapılmıştır. Bu modeller Naive bayes ve Decision Tree modelleridir. Projedeki test veri seti sonuçlarına bakıldığında;
-Naive Bayes Modeli Başarısı:0.96
-Decision Tree Modeli Başarısı:0.78
+Naive Bayes Modeli Başarısı:0.96  
+Decision Tree Modeli Başarısı:0.81 
 Sonuçlar Naive Bayes modelinin projede kullanılan veri seti için daha doğru sonuç verdiği tespit  edilmiştir.Bu projede hem Naive Bayes hem de  Decision Tree Modeli ile modeli eğittim.
 
 ##### Modelin Oluşturulmaya Başlanması
 ###### Etiketleme
 Temizlenmiş Ürün Başlıkları
-df["Etiket"] = df.apply(lambda row: etiketle(row), axis=1)
+df["Etiket"] = df.apply(lambda row: etiketle(row), axis=1)  
 koduyla etiketleyip
-df.to_csv("cleaned_data.csv", index=False) ile
+df.to_csv("cleaned_data.csv", index=False) ile  
 cleaned_data.csv tablosuna aktarıyoruz.
 Ürünlerin hangi kategoriye ait olduğu kelime şeklinde kayıtlı olduğu için bu ürünlerin 0,1,2,3,… gibi bilgisayarın anlayacağı bir formata dönüştürüyoruz. Etiket adında yeni bir kolon açıp kategoriye göre (veri setimizde 10 kategori var) bu yüzden 0‘dan 9'a kadar etiketleme yapıyoruz. Örneğin Gömlrk için 3, T-Shirt için 1 etiketlemesi yapıyoruz.
 
