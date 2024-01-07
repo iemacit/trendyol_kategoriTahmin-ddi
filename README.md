@@ -21,7 +21,7 @@ Bu projede trendyol.com sitesinden alınmış erkek giyim ve aksesuar başlıkla
 Veri setimiz trendyol.com da web scrapping işlemi yaparak farklı kategorilerden oluşan ilanlardan oluşuyor. Modelimizi doğru eğitebilmemiz için verilerimizin düzgün, eksiksiz veriler olması gerekir. Bu yüzden ürünler bazı kriterlere dikkat edilerek çekilmiştir. Örneğin ürün başlığında ürünün kategorisinin geçmesine önemle dikkat çekilmiştir.Trendyol üzerinden veriyi çekerken bazı linklere giriş yaparken modelim internet hızından dolayı bazılarında ürün bilgisi çekerken gecikme kaynaklı bilgiler eksik geldiği saptanmış ve bu durum oluşan ürünler listeye eklenmeden contunie ile çıkarılmıştır.Ürünleri çekebilmek için web scrapping işlemi yapan BeatufilSoup kütüphanesi kullanılmıştır. Veri setimde yaklaşık 9000 veri vardır.
 
 ##### Veri Setinde Bulunan Ürünlerin Kategori Dağılıöı
-![Veri Seti](https://github.com/UtkuYURT/markaTahmin-ddi/blob/main/images/veri-seti.png)  
+![Veri Seti](https://github.com/UtkuYURT/markaTahmin-ddi/blob/main/images/veri-seti.png](https://github.com/iemacit/trendyol_kategoriTahmin-ddi/blob/main/images/yuzdelik_urun_da%C4%9F%C4%B1l%C4%B1m%C4%B1.png) 
   
 ##### Veri Setinde Bulunan Kategorilerin Ortalama Fiyat Grafiği
 ![Veri Seti](https://github.com/UtkuYURT/markaTahmin-ddi/blob/main/images/veri-seti.png)  
