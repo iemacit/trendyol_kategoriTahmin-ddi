@@ -24,7 +24,7 @@ Veri setimiz trendyol.com da web scrapping işlemi yaparak farklı kategorilerde
 ![Veri Seti](https://github.com/iemacit/trendyol_kategoriTahmin-ddi/blob/main/images/yuzdelik_urun_da%C4%9F%C4%B1l%C4%B1m%C4%B1.png)
   
 ##### Veri Setinde Bulunan Kategorilerin Ortalama Fiyat Grafiği
-![Veri Seti](https://github.com/UtkuYURT/markaTahmin-ddi/blob/main/images/veri-seti.png)  
+![Veri Seti](https://github.com/iemacit/trendyol_kategoriTahmin-ddi/blob/main/images/ortalama_fiyat_dagilimi.png)
         
 Bu verileri çekmek ortalama 120 dakika sürmüştür.
 
@@ -36,13 +36,13 @@ Veri setindeki kolonlarımız aşağıdaki gibidir;
 Veri setinde ürünler Trendyol üzerindeki linkleri,fiyatları ve kategorileri ile ekleniyorlar. Bunun amacı oluşturulacak olan modeli eğitmek için hangi kategoriye ait olduğunu bilmek ve fiyatları alarak kategori bazlı istatislik oluşturmak.
 
 *Oluşturulmuş Veri Seti*  
-![Oluşturulmuş Veri Seti](https://github.com/UtkuYURT/markaTahmin-ddi/blob/main/images/olusturulmus-veri-seti.png)
+![Oluşturulmuş Veri Seti](https://github.com/iemacit/trendyol_kategoriTahmin-ddi/blob/main/images/trendyol_Cekilen_%C3%BCr%C3%BCnler.png)
 
 ##### ürünlerin Temizlenmesi ve Lemmatization İşlemi
 Veri seti oluşturulduktan sonra modelin daha iyi çalışması ve başarı oranının daha yüksek olması için ürünlerin temizlenmesi gerekmektedir. ürünlerin içerisinde ürün kodları, emojiler, noktalama işaretleri, stop wordsler, linkler gibi istenmeyen ve modelin başarısını düşürecek veriler ürünlerin içerisinden temizleniyor.  
   
 *Oluşturulmuş Temiz Ürün Başlığı Gösteremi*  
-![Oluşturulan Temiz İlan](https://github.com/UtkuYURT/markaTahmin-ddi/blob/main/images/olusturulan-temiz-ilan.png)
+![Oluşturulan Temiz İlan](https://github.com/iemacit/trendyol_kategoriTahmin-ddi/blob/main/images/temizlemi%C5%9F_veriseti.png)
 
 ##### Modelin Oluşturulması ve Ürünlerin Kategorilendirilmesi
 ###### Model Seçimi
@@ -61,7 +61,7 @@ cleaned_data.csv tablosuna aktarıyoruz.
 Ürünlerin hangi kategoriye ait olduğu kelime şeklinde kayıtlı olduğu için bu ürünlerin 0,1,2,3,… gibi bilgisayarın anlayacağı bir formata dönüştürüyoruz. Etiket adında yeni bir kolon açıp kategoriye göre (veri setimizde 10 kategori var) bu yüzden 0‘dan 9'a kadar etiketleme yapıyoruz. Örneğin Gömlrk için 3, T-Shirt için 1 etiketlemesi yapıyoruz.
 
 *Etiketlenmiş Veri Seti*  
-![Etiketlenmiş Veri Seti](https://github.com/UtkuYURT/markaTahmin-ddi/blob/main/images/veri-seti-son.png)
+![Etiketlenmiş Veri Seti](https://github.com/iemacit/trendyol_kategoriTahmin-ddi/blob/main/images/temiz-etiketlenmis_veriseti.png)
 
 ##### Veri Setinin Parçalanması
 Model başarısını doğru şekilde değerlendirebilmek için, eğitim ve test aşamalarında farklı veri kümeleri kullanmak önemlidir. Modelin eğitiminde kullanılan veriler, test aşamasında tekrar kullanılmamalıdır çünkü bu durum modelin başarısını yanıltıcı bir şekilde yüksek gösterebilir. Bu sebeple, veri setini bölmek gereklidir. Bu proje için, veri setinin %80'i modelin eğitimi için kullanılacak, geri kalan %20'si ise modelin test edilmesi için ayrılacaktır. Veri setini parçalamak için train_test_split() fonksiyonu kullanılmıştır.
@@ -73,7 +73,14 @@ TF-IDF vektörleme yöntemi kullanılarak, her bir ürün başlığındaki kelim
 Decision Tree metoduyla modelimiz eğitilmiştir. Modeli eğitmek için sklearn kütüphanesinden faydalanılmıştır.
 ##### Modelin Başarısının Hesaplanması
 Hesaplama aşağıdaki görseldedir  
-![Model Başarısı](https://github.com/UtkuYURT/markaTahmin-ddi/blob/main/images/model-basarisi.png)
+![Model Başarısı](https://github.com/iemacit/trendyol_kategoriTahmin-ddi/blob/main/images/model_basarisi1.png)
+![Model Başarısı](https://github.com/iemacit/trendyol_kategoriTahmin-ddi/blob/main/images/model_basarisi2.png)
+  
+### Model Tahminleri
+![Model Tahminleri](https://github.com/iemacit/trendyol_kategoriTahmin-ddi/blob/main/images/model_tahminleri.png)
 
+  
 ### SONUÇ
 Özetle yaptığım projede seçilen modelin ne kadar önemli olduğu görülmektedir. Projemde iki model yöntemi ile eğitmem sonucunda görüldüğü üzere iki modelde veri setimdeki ürün başlıkları ile eğitilmesi sonucunda yüksek başarı oranları vermiştir . Ancak model seçiminin önemi kadar veri setinin de güzel bir şekilde hazırlanmış olması, güzel temizlenmesi, veri setindeki veri miktarı, veri setinin dengesiz olup olmaması, eğitim-test setinin parçalanma oranı vb. faktörler modelin başarısına etki edildiği anlaşılmıştır.
+
+
