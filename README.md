@@ -46,7 +46,7 @@ Veri seti oluşturulduktan sonra modelin daha iyi çalışması ve başarı oran
 
 ##### Modelin Oluşturulması ve Ürünlerin Kategorilendirilmesi
 ###### Model Seçimi
-Yapılacak sınıflandırma işleminin hangi modelde daha yüksek başarı oranı vereceğini tespit etmek amacıyla araştırma yapılıp aynı zamanda bazı modeller üzerinde de test edilmiştir.2 model üzerinde denemeler yapılmıştır. Bu modeller Naive bayes ve Decision Tree modelleridir. Projedeki test veri seti sonuçlarına bakıldığında;
+Yapılacak sınıflandırma işleminin hangi modelde daha yüksek başarı oranı vereceğini tespit etmek amacıyla araştırma yapılıp aynı zamanda bazı modeller üzerinde de test edilmiştir.2 model üzerinde denemeler yapılmıştır. Bu modeller Naive bayes ve Decision Tree modelleridir. Projedeki test veri seti sonuçlarına bakıldığında;  
 Naive Bayes Modeli Başarısı:0.96  
 Decision Tree Modeli Başarısı:0.81   
 Sonuçlar Naive Bayes modelinin projede kullanılan veri seti için daha doğru sonuç verdiği tespit  edilmiştir.Bu projede hem Naive Bayes hem de  Decision Tree Modeli ile modeli eğittim.
@@ -56,8 +56,8 @@ Sonuçlar Naive Bayes modelinin projede kullanılan veri seti için daha doğru 
 Temizlenmiş Ürün Başlıkları
 df["Etiket"] = df.apply(lambda row: etiketle(row), axis=1)  
 koduyla etiketleyip
-df.to_csv("cleaned_data.csv", index=False) ile  
-cleaned_data.csv tablosuna aktarıyoruz.
+df.to_csv("cleaned_data.csv", index=False)   
+ile cleaned_data.csv tablosuna aktarıyoruz.
 Ürünlerin hangi kategoriye ait olduğu kelime şeklinde kayıtlı olduğu için bu ürünlerin 0,1,2,3,… gibi bilgisayarın anlayacağı bir formata dönüştürüyoruz. Etiket adında yeni bir kolon açıp kategoriye göre (veri setimizde 10 kategori var) bu yüzden 0‘dan 9'a kadar etiketleme yapıyoruz. Örneğin Gömlrk için 3, T-Shirt için 1 etiketlemesi yapıyoruz.
 
 *Etiketlenmiş Veri Seti*  
