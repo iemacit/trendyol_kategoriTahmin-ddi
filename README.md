@@ -1,4 +1,4 @@
-# markaTahmin-ddi
+# KategoriTahmin-ddi
 
 ### Projeyi Hazırlayanlar;
 İBRAHİM ETHEM MACİT 213405050
